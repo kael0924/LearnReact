@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+@reference "tailwindcss";
+
+/*
+  NFT Preview Card — Frontend Mentor challenge
+  Styled with Tailwind @apply. Colors come from style-guide.md and are
+  kept as CSS variables so they read clearly inside bracket utilities.
+  Class names match the camelCase keys used in NFTPreviewCard.tsx.
+*/
+
+.page {
+    --clr-cyan: hsl(178, 100%, 50%);
+    /* accent (price, hover) */
+    --clr-soft-blue: hsl(215, 51%, 70%);
+    /* body text */
+    --clr-main-bg: hsl(217, 54%, 11%);
+    /* page background */
+    --clr-card-bg: hsl(216, 50%, 16%);
+    /* card background */
+    --clr-line: hsl(215, 32%, 27%);
+    /* divider */
+
+    @apply fixed inset-0 flex items-center justify-center p-6 bg-[var(--clr-main-bg)];
+    font-family: "Outfit", system-ui, sans-serif;
+}
+
+.container {
+    @apply w-full max-w-[350px] p-6 rounded-[15px] bg-[var(--clr-card-bg)];
+    box-shadow: 0 25px 50px -12px hsl(217, 54%, 6%);
+}
+
+/* --- Artwork + hover overlay --- */
+.imageContainer {
+    @apply relative block overflow-hidden rounded-lg cursor-pointer;
+}
+
+.artwork {
+    @apply block h-auto w-full;
+}
+
+.viewOverlay {
+    @apply absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300;
+    background: hsl(178 100% 50% / 0.5);
+}
+
+.imageContainer:hover .viewOverlay,
+.imageContainer:focus-visible .viewOverlay {
+    @apply opacity-100;
+}
+
+.viewOverlay img {
+    @apply h-12 w-12;
+}
+
+/* --- Text content --- */
+.infoContainer {
+    @apply pt-6;
+}
+
+.title {
+    @apply inline-block text-[1.375rem] font-semibold text-white no-underline transition-colors duration-200;
+}
+
+.title:hover {
+    @apply text-[var(--clr-cyan)];
+}
+
+.description {
+    @apply mt-4 text-lg font-light leading-relaxed text-[var(--clr-soft-blue)];
+}
+
+/* --- Price + time left --- */
+.stats {
+    @apply mt-4 flex items-center justify-between text-[0.95rem];
+}
+
+.price,
+.time {
+    @apply flex items-center gap-2;
+}
+
+.price {
+    @apply font-semibold text-[var(--clr-cyan)];
+}
+
+.time {
+    @apply font-normal text-[var(--clr-soft-blue)];
+}
+
+/* --- Author --- */
+.author {
+    @apply mt-4 flex items-center gap-4 border-t pt-4 text-[0.95rem] border-[var(--clr-line)] text-[var(--clr-soft-blue)];
+}
+
+.avatar {
+    @apply h-[33px] w-[33px] rounded-full border border-white;
+}
+
+.author a {
+    @apply text-white no-underline transition-colors duration-200;
+}
+
+.author a:hover {
+    @apply text-[var(--clr-cyan)];
+}

@@ -1,0 +1,5 @@
+export { default as ImageEquilibrium } from "../nft-preview-card-component-main/images/image-equilibrium.jpg"
+export { default as ImageAvatar } from "../nft-preview-card-component-main/images/image-avatar.png"
+export { default as IconEtherium } from "../nft-preview-card-component-main/images/icon-ethereum.svg"
+export { default as IconView } from "../nft-preview-card-component-main/images/icon-view.svg"
+export { default as IconClock } from "../nft-preview-card-component-main/images/icon-clock.svg"
